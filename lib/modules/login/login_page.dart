@@ -9,7 +9,37 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
-      body: Padding(
+      body: body(),
+      bottomNavigationBar: buttonNav(),
+    );
+  }
+
+  AppBar appBar()
+  {
+    return AppBar(
+        title: Center(
+          child: DropdownButton<String>(
+              value: "English",
+              style: const TextStyle(color: Colors.grey),
+              underline: Container(height: 0),
+              onChanged: (String? newValue) {},
+              items: <String>['English', '...']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList()),
+        ),
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      );
+  }
+
+  Widget body()
+  {
+    return Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,31 +135,6 @@ class LoginPage extends StatelessWidget {
             )
           ],
         ),
-      ),
-      bottomNavigationBar: buttonNav(),
-    );
-  }
-
-  AppBar appBar()
-  {
-    return AppBar(
-        title: Center(
-          child: DropdownButton<String>(
-              value: "English",
-              style: const TextStyle(color: Colors.grey),
-              underline: Container(height: 0),
-              onChanged: (String? newValue) {},
-              items: <String>['English', '...']
-                  .map<DropdownMenuItem<String>>((String value) {
-                return DropdownMenuItem<String>(
-                  value: value,
-                  child: Text(value),
-                );
-              }).toList()),
-        ),
-        automaticallyImplyLeading: false,
-        elevation: 0,
-        backgroundColor: Colors.transparent,
       );
   }
 
