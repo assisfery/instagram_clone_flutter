@@ -7,6 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: appBar(),
       backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
@@ -105,25 +106,53 @@ class LoginPage extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: BottomAppBar(
+      bottomNavigationBar: buttonNav(),
+    );
+  }
+
+  AppBar appBar()
+  {
+    return AppBar(
+        title: Center(
+          child: DropdownButton<String>(
+              value: "English",
+              style: const TextStyle(color: Colors.grey),
+              underline: Container(height: 0),
+              onChanged: (String? newValue) {},
+              items: <String>['English', '...']
+                  .map<DropdownMenuItem<String>>((String value) {
+                return DropdownMenuItem<String>(
+                  value: value,
+                  child: Text(value),
+                );
+              }).toList()),
+        ),
+        automaticallyImplyLeading: false,
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+      );
+  }
+
+  Widget buttonNav()
+  {
+    return BottomAppBar(
         elevation: 0,
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 18.0),
           child: Container(
             height: 24,
-            child: Center(
+            child: const Center(
               child: Text.rich(TextSpan(
                   text: "Dont have an account?",
                   style: TextStyle(fontSize: 12),
                   children: [
                     TextSpan(
-                        text: " Sign up.",
-                        style: TextStyle(color: Colors.blue))
+                        text: " Sign up.", style: TextStyle(color: Colors.blue))
                   ])),
             ),
           ),
         ),
-      ),
-    );
+      );
   }
+
 }
