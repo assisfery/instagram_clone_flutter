@@ -7,6 +7,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
         child: Column(
@@ -49,31 +50,24 @@ class LoginPage extends StatelessWidget {
                         style: TextStyle(color: Colors.white),
                       ),
                       style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all<Color>(Colors.blue),
-                          shadowColor: MaterialStateProperty.all<Color>(Colors.transparent),
-                          ),
-                          
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.blue),
+                        shadowColor: MaterialStateProperty.all<Color>(
+                            Colors.transparent),
+                      ),
                     ),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(top: 12.0),
-                  child: Text.rich(
-                    TextSpan(
+                  child: Text.rich(TextSpan(
                       text: "Forgotten your login details?",
-                      style: TextStyle(
-                        fontSize: 12
-                      ),
+                      style: TextStyle(fontSize: 12),
                       children: [
                         TextSpan(
-                          text: " Get help with loggin in.",
-                          style: TextStyle(
-                            color: Colors.blue
-                          )
-                        )
-                      ]
-                    )
-                  ),
+                            text: " Get help with loggin in.",
+                            style: TextStyle(color: Colors.blue))
+                      ])),
                 ),
                 Row(
                   children: [
@@ -98,17 +92,35 @@ class LoginPage extends StatelessWidget {
                   ],
                 ),
                 TextButton(
-                  onPressed: (){},
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                    Icon(Icons.facebook),
-                    Text("Log In With Facebook")
-                ])
-                ),       
+                    onPressed: () {},
+                    child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const [
+                          Icon(Icons.facebook),
+                          Text("Log In With Facebook")
+                        ])),
               ]),
             )
           ],
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        elevation: 0,
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 18.0),
+          child: Container(
+            height: 24,
+            child: Center(
+              child: Text.rich(TextSpan(
+                  text: "Dont have an account?",
+                  style: TextStyle(fontSize: 12),
+                  children: [
+                    TextSpan(
+                        text: " Sign up.",
+                        style: TextStyle(color: Colors.blue))
+                  ])),
+            ),
+          ),
         ),
       ),
     );
