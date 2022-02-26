@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:instagram_clone_flutter/shared/themes/app_images.dart';
 
+import 'login_controller.dart';
+
 class LoginPage extends StatelessWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
+
+  var controller = LoginController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: appBar(),
       backgroundColor: Colors.white,
-      body: body(),
+      body: body(context),
       bottomNavigationBar: buttonNav(),
     );
   }
@@ -37,7 +41,7 @@ class LoginPage extends StatelessWidget {
       );
   }
 
-  Widget body()
+  Widget body(BuildContext context)
   {
     return Padding(
         padding: const EdgeInsets.symmetric(vertical: 24),
@@ -76,7 +80,9 @@ class LoginPage extends StatelessWidget {
                     width: double.infinity,
                     height: 38,
                     child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        controller.login(context);
+                      },
                       child: const Text(
                         "Login",
                         style: TextStyle(color: Colors.white),
