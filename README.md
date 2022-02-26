@@ -1,16 +1,21 @@
-# instagram_clone_flutter
+# Instagram Clone App done with flutter
+A simple project to practice flutter concepts.
 
-A new Flutter project.
+# Screenshots
 
-## Getting Started
+## Login
+![Login Page](/docs/screenshots/login.jpg)
 
-This project is a starting point for a Flutter application.
+## Home
+<table>
+    <tr>
+        <td style="border: none;">
+            <img src="/docs/screenshots/home1.jpg">
+        </td>
+        <td style="border: none;">
+            <img src="/docs/screenshots/home2.jpg">
+        </td>
+    </tr>
+</table>
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
