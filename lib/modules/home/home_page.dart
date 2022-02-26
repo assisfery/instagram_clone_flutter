@@ -90,34 +90,39 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  BottomAppBar bottomNav() {
-    return BottomAppBar(
-        elevation: 0,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.home_outlined,
-                size: 32,
-              ),
-              padding: EdgeInsets.all(0),
-            ),
-            IconButton(
+  Widget bottomNav() {
+    return Container(
+      decoration: const BoxDecoration(
+        border: Border(top: BorderSide(color: Colors.grey))
+      ),
+      child: BottomAppBar(
+          elevation: 0,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              IconButton(
                 onPressed: () {},
                 icon: const Icon(
-                  Icons.search,
+                  Icons.home_outlined,
                   size: 32,
-                )),
-            IconButton(
-                onPressed: () {},
-                icon: const Icon(FontAwesomeIcons.playCircle)),
-            IconButton(
-                onPressed: () {}, icon: const Icon(FontAwesomeIcons.heart)),
-            IconButton(
-                onPressed: () {}, icon: const Icon(FontAwesomeIcons.user))
-          ],
-        ));
+                ),
+                padding: EdgeInsets.all(0),
+              ),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(
+                    Icons.search,
+                    size: 32,
+                  )),
+              IconButton(
+                  onPressed: () {},
+                  icon: const Icon(FontAwesomeIcons.playCircle)),
+              IconButton(
+                  onPressed: () {}, icon: const Icon(FontAwesomeIcons.heart)),
+              IconButton(
+                  onPressed: () {}, icon: const Icon(FontAwesomeIcons.user))
+            ],
+          )),
+    );
   }
 }

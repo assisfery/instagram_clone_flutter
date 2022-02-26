@@ -47,13 +47,7 @@ class PostWidget extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(top: 4),
-            child: Container(
-              //height: 400,
-              child: FittedBox(
-                child: Image.asset(this.post_image_url),
-                fit: BoxFit.cover,
-              ),
-            ),
+            child: Image.asset(this.post_image_url),
           ),
           Row(children: [
             IconButton(onPressed: (){}, icon: Icon(FontAwesomeIcons.heart)),
