@@ -15,12 +15,9 @@ class StoryWidget extends StatelessWidget {
           decoration: BoxDecoration(
               borderRadius: BorderRadiusDirectional.circular(24),
             ),
-          child: Padding(
-            padding: const EdgeInsets.all(1),
-            child: FittedBox(
-              child: Image.asset(image_url),
-              fit: BoxFit.cover,
-            ),
+          child: FittedBox(
+            child: Image.asset(image_url),
+            fit: BoxFit.cover,
           )),
     );
   }
